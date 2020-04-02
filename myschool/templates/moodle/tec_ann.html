@@ -1,0 +1,143 @@
+{% extends 'moodle/base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block body%}
+<h1>Hello {{stu.f_name}} </h1>
+<br>
+<fieldset class="module aligned ">
+    Hear are the Announcements you uploaded
+{{msg}}
+    {%for i in stu.announcement_set.all%}
+
+
+    <div class="form-row field-f_name">
+        <h4>"{{i}}"&nbsp;&nbsp;&nbsp; <h5>>>{{i.msg}}</h5>
+    </div>
+    {%endfor%}
+
+
+            <h1>Add announcement</h1><br>
+
+    <form action="{% url 'moodle:add_ann'%}" id="announcement_form" method="post" novalidate>
+        {% csrf_token%}
+        <div>
+
+
+            <fieldset class="module aligned ">
+
+                <div class="form-row field-due_date">
+
+
+                    <div>
+
+
+                        <label class="required" for="id_due_date">Due date:</label>
+
+                        <input class="vDateField" id="id_due_date" name="due_date" required size="10" type="date"
+                        >
+
+
+                    </div>
+
+                </div>
+
+                <div class="form-row field-end_date">
+
+
+                    <div>
+
+
+                        <label class="required" for="id_end_date">End date:</label>
+
+                        <input class="vDateField" id="id_end_date" name="end_date" required size="10" type="date"
+                        >
+
+
+                    </div>
+
+                </div>
+
+                <div class="form-row field-msg">
+
+
+                    <div>
+
+
+                        <label class="required" for="id_msg">Msg:</label>
+
+                        <input class="vTextField" id="id_msg" maxlength="150" name="msg"
+                               required type="text"/>
+
+
+                    </div>
+
+                </div>
+
+
+            </fieldset>
+
+
+            <div class="submit-row">
+
+                <input class="default" name="_save" type="submit" value="Save">
+
+            </div>
+        </div>
+    </form>
+    </div>
+
+</fieldset>
+
+
+
+
+
+<fieldset class="module aligned ">
+ <h1>Delete an Announcement</h1><br>
+<form  action="{% url 'moodle:del_ann'%}" id="changelist-form" method="post" >
+{% csrf_token%}
+
+
+    <div class="results">
+                <div class="text"><span>Announcement</span></div>
+                   <br>
+{%for i in stu.announcement_set.all%}
+
+
+                <input name="ann" type="radio"
+                                                   value="{{i.id}}"></td>
+
+               Due Date is {{i.due_date}} End date is {{i.end_date}}
+                    <br>
+
+
+{% endfor%}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+  <div class="submit-row">
+
+                <input class="default" name="_save" type="submit" value="Save">
+
+            </div>
+
+</form>
+</div>
+</div>
+
+<br class="clear">
+</div>
+</fieldset>
+{% endblock%}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'moodle/base_stu.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block body%}
+<h1>Your class teacher {{stu.f_name}} has put this notes</h1>
+{%for i in stu.notes_set.all%}
+<br>
+<h3><a href="{{i.pdf.url}}" style="background-color:#ffffa0"><font>>> &nbsp;{{i}}</a></h3>
+{%endfor%}
+{% endblock%}
+
+</body>
+</html>

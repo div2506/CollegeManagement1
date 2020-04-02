@@ -1,0 +1,19 @@
+{% extends 'myschool/base_tec.html' %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Acc Home</title>
+</head>
+<body>
+{%block body%}
+{% load static%}
+<img src="{{stu.img.url}}" height="200" width="200"/>
+<h1>Teacher id : {{stu.T_ID}} Name : {{stu.f_name}}</h1>
+{% if request.user.is_superuser %}
+<font face="agencyfb"  size="5">Register A new Teacher >></font><a href="{% url 'myschool:teacher_reg'%}"> <img  src="{% static 'myschool/register.png'%} " height="50" width="50"</a></a><br>
+{% endif %}
+<font face="agencyfb"  size="5">Register A new Student >></font><a href="{% url 'myschool:registerform'%}"><img  src="{% static 'myschool/register.png'%} " height="50" width="50"</a>
+{% endblock%}
+</body>
+</html>

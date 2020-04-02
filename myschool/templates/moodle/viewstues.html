@@ -1,0 +1,43 @@
+{% extends 'moodle/base.html' %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Moodle Tec Home</title>
+</head>
+<body>
+{%block body%}
+{%if stu%}<h1>{{stu}}</h1>
+
+
+<fieldset class="module aligned ">
+
+    <table id="table table-striped" width="400">
+  <thead>
+    <tr>
+        <th scope="col"><div class="form-row field-m_name">S_ID</div></th>
+        <th scope="col"><div class="form-row field-m_name">Name</div></th>
+        <th scope="col"><div class="form-row field-m_name">Photo</div></th>
+    </tr>
+  </thead>
+        <tbody>
+
+    {% for i in stus%}
+        <tr>
+            <td scope="row1"><div class="form-row field-m_name">{{i.S_ID}}</div></td>
+            <td><div class="form-row field-m_name">{{i.f_name}}&nbsp;
+               {{i.m_name}}&nbsp;
+                    {{i.l_name}}</div></td>
+            <td><img src="{{i.img.url}}" height="50" width="50"></td>
+    </tr>
+        {% endfor%}
+        </tbody>
+    </table>
+
+    {%else%}<h1>Home<br>
+    {% endif%}
+</h1>
+</fieldset>
+{% endblock%}
+</body>
+</html>

@@ -1,0 +1,82 @@
+{% extends 'myschool/base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+    <title>Student_Login</title>
+    <!--link rel="stylesheet" type="text/css" href="/static/admin/css/base.css"-->
+
+
+
+
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!--link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css"-->
+
+    {% endblock %}
+
+</head>
+{% block body %}
+<body class="login"
+      data-admin-utc-offset="0">
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header" c>
+        <div id="branding">
+
+           <center><br><h1> Student Login</h1><br></center>
+
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+
+
+    <!-- Content -->
+    <div class="colM" id="content">
+
+
+        <div id="content-main">
+
+
+            <form action="/myschool/VarifyAsStu/" id="login-form" method="post">
+                {% csrf_token %}
+                <div class="form-row">
+
+                    <label class="required" for="id_username">Username:</label> <input autofocus id="id_username"
+                                                                                       name="username" required
+                                                                                       type="text">
+                </div>
+                <div class="form-row">
+
+                    <label class="required" for="id_password">Password:</label> <input id="id_password" name="password"
+                                                                                       required type="password">
+
+                </div>
+
+
+                <div class="submit-row">
+                    <label>&nbsp;</label><input type="submit" value="Log in">
+                </div>
+            </form>
+
+        </div>
+
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+{% endblock %}
+</html>

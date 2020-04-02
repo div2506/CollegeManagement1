@@ -1,0 +1,76 @@
+{% extends 'myschool/base.html' %}
+
+
+<head>
+    <meta charset="UTF-8">
+    {% block head%}
+    <title>Teacher Login</title>
+     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    {% endblock %}
+
+</head>
+
+
+
+{% block body %}
+<body class="login"
+      data-admin-utc-offset="0">
+<div id="container">
+
+
+
+    <!-- Header -->
+    <div id="header" >
+        <div id="branding">
+
+           <center><br><h1> Teacher Login</h1><br></center>
+           <!--<h2><a href="/myschool/RegisterForm">Ragister Student</a> </h2>-->
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+
+
+    <!-- Content -->
+    <div class="colM" id="content">
+
+
+        <div id="content-main">
+
+
+            <form action="/myschool/VarifyAsTec/" id="login-form" method="post">
+                 {% csrf_token %}
+                <div class="form-row">
+
+                    <label class="required" for="id_username">Username:</label> <input autofocus id="id_username"
+                                                                                       name="username" required
+                                                                                       type="text">
+                </div>
+                <div class="form-row">
+
+                    <label class="required" for="id_password">Password:</label> <input id="id_password" name="password"
+                                                                                       required type="password">
+
+                </div>
+
+
+                <div class="submit-row">
+                    <label>&nbsp;</label><input type="submit" value="Log in">
+                </div>
+            </form>
+
+        </div>
+
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+</body>
+{% endblock %}
+
+

@@ -1,0 +1,202 @@
+{% extends 'myschool/base_tec.html' %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Profile</title>
+</head>
+
+<body>
+    {%block body%}
+
+    <div class="Container">
+
+
+        <!-- Student info--->
+    </div>
+    <fieldset class="module aligned ">
+        <br>
+        <h1>Teacher Id :-{{stu.T_ID}}</h1>
+        <br>
+        <div class="form-row field-img">
+
+
+            <div>
+
+
+
+
+
+                <img height="150" src="{{stu.img.url}}" width="150" />
+
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-f_name">
+
+
+            <div>
+
+                <label class="required" for="id_f_name">F name:</label> {{stu.f_name}}
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-m_name">
+
+
+            <div>
+
+
+                <label class="required" for="id_m_name">M name:</label> {{stu.m_name}}
+
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-l_name">
+
+
+            <div>
+
+
+                <label class="required" for="id_l_name">L name:</label> {{stu.l_name}}
+
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-gender">
+
+
+            <div>
+
+
+                <label class="required">Gender:</label>
+                <label class="required">{{stu.gender}}</label>
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-birthdate">
+
+
+            <div>
+
+
+                <label>Birthdate:</label>
+
+
+                <label>{{stu.birthdate}}</label>
+
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-blood_group">
+
+
+            <div>
+
+
+                <label class="required">Blood group:</label>
+
+                <label class="required">{{stu.blood_group}}</label>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <!--Contact Info-->
+        <h1>Add contact_info</h1>
+
+
+        <div class="form-row field-addrese">
+
+
+            <div>
+
+
+                <label class="required">Addrese:</label>
+
+                <textarea class="vLargeTextField" cols="40" id="id_add" name="addrese" readonly required rows="10">
+                                    {{stu.contact.addrese}}
+                                </textarea>
+
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-city">
+
+
+            <div>
+
+
+                <label class="required" for="id_city">City:</label> {{stu.contact.city}}
+
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-pincode">
+
+
+            <div>
+
+
+                <label class="required" for="id_pincode">Pincode:</label> {{stu.contact.pincode}}
+
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-ph_no">
+
+
+            <div>
+
+
+                <label class="required" for="id_ph_no">Ph no:</label> {{stu.contact.ph_no}}
+
+            </div>
+
+        </div>
+
+        <div class="form-row field-email">
+
+
+            <div>
+
+
+                <label class="required" for="id_email">Email:</label> {{stu.contact.email}}
+
+
+            </div>
+
+        </div>
+
+    </fieldset>
+    </div>
+
+    </div>{% endblock%}
+</body>
+
+</html>

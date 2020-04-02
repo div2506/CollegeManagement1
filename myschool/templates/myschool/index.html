@@ -1,0 +1,33 @@
+{% extends 'myschool/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> {% block head%}
+    <title>My University</title>{% endblock %}
+
+</head>
+
+<body>
+    <div class="page-bg">
+        {% block body%}
+        <div id="container">
+            <font color="white" face="Agent Orange" size="8">
+                Welcome To Charusat University</font>
+            <br>
+            <h1>Login As</h1>
+            {% load static %} &emsp; &emsp;&emsp;
+            <a href="/myschool/Teacher"><img src="{% static 'myschool/teacher.png' %}" height="200" width="200" border="5" /></a>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <a href="/myschool/Student"><img src="{% static 'myschool/student.png' %}" height="250" width="250" /></a>
+            <br>
+            <b><font size="5"  face="verdana"> &emsp;&emsp; &emsp;As Teacher  &emsp;&emsp; &emsp; &emsp;&emsp;&emsp;As Student</font></b>
+        </div>
+        <!-- <h1> <a href="{% url 'myschool:teacher_reg' %}">Teacher add</a></h1>-->
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>

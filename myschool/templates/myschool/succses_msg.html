@@ -1,0 +1,18 @@
+  {% extends 'myschool/base.html'%}
+<head>
+    <meta charset="UTF-8">
+    <title>Sucsees_msg</title>
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+</head>
+<body>
+    {% block body%}
+    <h2> Your ID :{{stu.S_ID}}{{stu.T_ID}}
+   </h2><font align="center" size="3" color="White">
+
+    <h3>Your Password Formet is "first four digit is your birthdate(ddmm) i.e 1710 or 0812
+        <br>and other three Charecters are first charecters of first,middle,last name <br>and than Birthdate(dd) ex. 17"
+       <p> ex.Mr.Ushank Rajeshbhai Radadiya birthdate is 17/10/2000 than password is 1710urr17</p></h3>
+    {% endblock%}
+
+</body>
+</html>

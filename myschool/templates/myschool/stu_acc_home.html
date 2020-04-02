@@ -1,0 +1,23 @@
+{% extends 'myschool/base_stu.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Acc Home</title>
+</head>
+<body>
+{%block body%}
+{%for i in msgs%}
+<div class="example1">
+    <h3>{{i.msg}}</h3><br></div>
+{%endfor%}
+
+
+<br> <h2><font color="black">HI {{stu.f_name }}</font> </h2>
+<img src="{{stu.img.url}}" height="200" width="200"/>
+<h2><font color="black">Your Class Teacher is :{{tec.f_name}}</font><br></h2>
+<br>
+
+{% endblock%}
+</body>
+</html>

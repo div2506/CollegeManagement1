@@ -1,0 +1,111 @@
+{% extends 'moodle/base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block body%}
+<h1>Hello {{stu.f_name}} </h1>
+<br>
+Hear are your Notes that you uploaded.
+{%for i in stu.notes_set.all%}
+<br>
+<h3><a href="{{i.pdf.url}}" style="background-color:#ffffa0"><font>>> &nbsp; {{i.name}}</a></h3>
+{%endfor%}
+
+
+<form action="{% url 'moodle:add_notes'%}" enctype="multipart/form-data" method="post">
+    <div>
+        {% csrf_token %}
+
+        <fieldset class="module aligned ">
+            <br>
+            <h1>Upload new notes:</h1><br>
+            <div class="form-row field-pdf">
+
+
+                <div>
+
+
+                    <label for="id_pdf">Pdf:</label>
+
+                    <input id="id_pdf" name="pdf" type="file">
+
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row field-name">
+
+
+                <div>
+
+
+                    <label for="id_name">Name:</label>
+
+                    <input class="vTextField" id="id_name" maxlength="15" name="name" type="text">
+
+
+                </div>
+
+            </div>
+
+        </fieldset>
+
+        <div class="submit-row">
+
+            <input class="default" name="save" type="submit" value="Update">
+
+
+        </div>
+</form>
+<fieldset class="module aligned ">
+
+
+<h1>Delete Notes</h1><br>
+
+
+    <form action="{% url 'moodle:del_notes'%}" id="changelist-form" method="post">
+        {% csrf_token%}
+
+
+        <div class="results">
+            <div class="text"><span><h5>Notes</h5></span></div>
+            <br>
+            {%for i in stu.notes_set.all%}
+
+
+            <input name="note" type="radio"
+                   value="{{i.id}}"></td>
+
+            Note's name {{i.name}}
+            <br>
+
+
+            {% endfor%}
+
+            </tbody>
+            </table>
+        </div>
+
+
+        <div class="submit-row">
+
+            <input class="default" name="_save" type="submit" value="DELETE">
+
+        </div>
+
+    </form>
+    </div>
+    </div>
+
+    <br class="clear">
+    </div>
+</fieldset>
+{% endblock%}
+</body>
+</html>

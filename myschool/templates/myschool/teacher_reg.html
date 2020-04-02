@@ -1,0 +1,263 @@
+{% extends 'myschool/base_tec.html' %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Registration</title>
+</head>
+
+<body>
+    {%block body%}
+    <div class="colM" id="content">
+
+        <h1>Add teacher_info</h1>
+        <div id="content-main">
+
+
+            <form action="{% url 'myschool:tec_reg_db'%}" enctype="multipart/form-data" id="teacher_info_form" method="post" novalidate>
+                {% csrf_token %}
+                <div>
+
+
+                    <fieldset class="module aligned ">
+
+
+
+
+
+                        <div class="form-row field-f_name">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_f_name">F name:</label>
+
+                                <input class="vTextField" id="id_f_name" maxlength="15" name="f_name" required type="text">
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-m_name">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_m_name">M name:</label>
+
+                                <input class="vTextField" id="id_m_name" maxlength="15" name="m_name" required type="text">
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-l_name">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_l_name">L name:</label>
+
+                                <input class="vTextField" id="id_l_name" maxlength="15" name="l_name" required type="text">
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-gender">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_gender">Gender:</label>
+
+                                <div class="related-widget-wrapper">
+                                    <select name="gender" required id="id_gender">
+                                    <option value="male">male
+                                    </option>
+                                    <option value="female.">
+                                        female
+                                    </option>
+
+                                </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-birthdate">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_birthdate">Birthdate:</label>
+
+                                <input id="id_birthdate" name="birthdate" type="date">
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-blood_group">
+
+
+                            <label class="required" for="id_blood_group">Blood group:</label>
+
+                            <div class="related-widget-wrapper">
+                                <select name="blood_group" required id="id_blood_group">
+                                    <option value="a+">a+</option>
+                                     <option value="a+">a+</option>
+                              <option value="b+">b+</option>
+                              <option value="ab+">ab+</option>
+                              <option value="a-">a-</option>
+                              <option value="b-">b-</option>
+                              <option value="ab-">ab-</option>
+                              <option value="o+">o+</option>
+                                <option value="o-">o-</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="form-row field-img">
+
+
+                            <div>
+
+
+                                <label for="id_img">Img:</label>
+
+                                <input id="id_img" required name="image" type="file">
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-addrese">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_addrese">Addrese:</label>
+
+                                <textarea name="addrese" cols="40" rows="10" class="vLargeTextField" required id="id_addrese">
+</textarea>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-city">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_city">City:</label>
+
+                                <input type="text" name="city" class="vTextField" maxlength="10" required id="id_city">
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-pincode">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_pincode">Pincode:</label>
+
+                                <input type="text" name="pincode" pattern="[0-9]{6}" class="vIntegerField" required id="id_pincode">
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-ph_no">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_ph_no">Ph no:</label>
+
+                                <input type="text" name="ph_no" pattern="[0-9]{10}" required id="id_ph_no">
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-email">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_email">Email:</label>
+
+                                <input type="email" name="email" class="vTextField" maxlength="254" required id="id_email">
+
+
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <div class="submit-row">
+
+                        <input class="default" name="_save" type="submit" value="Save">
+
+
+
+
+                    </div>
+
+
+                    <script data-model-name="teacher_info" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" type="text/javascript">
+                    </script>
+
+
+                    <script data-prepopulated-fields="[]" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" type="text/javascript">
+                    </script>
+
+
+                </div>
+            </form>
+        </div>
+
+
+        <br class="clear">
+    </div>
+    {% endblock%}
+</body>
+
+</html>

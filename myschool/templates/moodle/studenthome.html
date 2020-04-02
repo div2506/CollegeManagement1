@@ -1,0 +1,19 @@
+{% extends 'moodle/base_stu.html' %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Moodle Tec Home</title>
+</head>
+<body>
+{%block body%}
+
+<h1>Here is your Moodle</h1> <br> <h2><font color="black">HI {{stu.f_name }}</font> </h2>
+<img src="{{stu.img.url}}" height="200" width="200"/>
+<h2><font color="black">Your Class Teacher is :{{tec.f_name}}</font><br></h2>
+<br>
+
+
+{% endblock%}
+</body>
+</html>

@@ -1,0 +1,100 @@
+{% extends 'myschool/base.html' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> {% block head%}
+    <title>about school</title>
+    <link href="assets/web/assets/mobirise-icons/mobirise-icons.css" rel="stylesheet">
+    <link href="assets/tether/tether.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="assets/dropdown/css/style.css" rel="stylesheet">
+    <link href="assets/theme/css/style.css" rel="stylesheet">
+    <link href="assets/mobirise/css/mbr-additional.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .photos img {
+            -webkit-transition: all 0.5s ease-out;
+            -moz-transition: all 0.5s ease-out;
+            -o-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out;
+            padding: 10px 10px 30px 10px;
+            background: white;
+            border: solid 1px black;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+    </style>
+    {% endblock%}
+
+
+</head>
+
+<body>
+    {%block body%}
+
+
+
+    <body bgcolor="">
+
+        <CENTER>
+            <h1>
+                <font color="white" face="Agent Orange" size="8">CHARUSAT UNIVERSITY</font>
+            </h1>
+            <h2>
+                <font color="white" face="Agent Orange" size="5">We are a Family</font>
+            </h2>
+        </CENTER>
+
+
+        <div></div>
+        <h3 align="CENTER"> ABOUT US</h3>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <body>
+            <font align="center" size="" color="Green">
+                WHAT TO TELL ABOUT US ??</font><br>
+            <font align="center" size="2" face="Agent Orange" color="OrangeREd">
+                <b>Here we are with the most trustable system to Ensure your childs future & knowldge !<b></b>
+                <h5>
+                    <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
+                        We are all very different. We were born in different cities, at different times, we love different music, food, movies. But we have something that unites us all. It is our company. We are its heart. We are not just a team, we are a family.
+                    </p>
+                </h5>
+
+            </font>
+
+            {% load static %}
+
+            <center>
+                <div class="w3-content w3-section" style="max-width:500px">
+                    <img class="mySlides" src="{% static 'myschool/img1.jpg'%}" style="width:100%" style="height:100%">
+                    <img class="mySlides" src="{% static 'myschool/img2.jpg'%}" style="width:100%" style="height:100%">
+                    <img class="mySlides" src="{% static 'myschool/img3.jpg'%}" style="width:100%" style="height:100%">
+                    <img class="mySlides" src="{% static 'myschool/img4.jpg'%}" style="width:100%" style="height:100%" />
+                </div>
+                <script>
+                    var myIndex = 0;
+                    carousel();
+
+                    function carousel() {
+                        var i;
+                        var x = document.getElementsByClassName("mySlides");
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";
+                        }
+                        myIndex++;
+                        if (myIndex > x.length) {
+                            myIndex = 1
+                        }
+                        x[myIndex - 1].style.display = "block";
+                        setTimeout(carousel, 2000); // Change image every 2 seconds
+                    }
+                </script>
+            </center>
+
+            {% endblock%}

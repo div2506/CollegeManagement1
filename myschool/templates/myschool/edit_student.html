@@ -1,0 +1,379 @@
+{% extends 'myschool/base_stu.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EditSyudent</title>
+</head>
+<body>
+{% block body %}
+
+    <div class="Container">
+
+        <form action="../ChangeToDB/" method="post" enctype="multipart/form-data" >
+         {% csrf_token%}
+
+        <!-- Student info--->
+        <fieldset class="module aligned ">
+
+
+            <div class="form-row field-f_name">
+
+
+                    <div>
+
+                            <label class="required" for="id_f_name">F name:</label>
+
+                                <input type="text" name="f_name" value="{{stu.f_name}}" class="vTextField" maxlength="15" required id="id_f_name">
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-m_name">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_m_name">M name:</label>
+
+                                <input type="text" name="m_name" value="{{stu.m_name}}" class="vTextField" maxlength="15" required id="id_m_name">
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-l_name">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_l_name">L name:</label>
+
+                                <input type="text" name="l_name" value="{{stu.l_name}}" class="vTextField" maxlength="15" required id="id_l_name">
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-gender">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_gender">Gender:</label>
+
+                                     <div class="related-widget-wrapper">
+                        <select name="gender" required id="id_gender" >
+                                    <option value="male">male
+                                    </option>
+                                    <option value="female.">
+                                        female
+                                    </option>
+
+                                </select>
+                                     </div>
+                    </div>
+
+            </div>
+
+            <div class="form-row field-birthdate">
+
+
+                    <div>
+
+
+                            <label >Birthdate:</label>
+
+
+                             <label>{{stu.birthdate}}</label>
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-blood_group">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_blood_group">Blood group:</label>
+
+                        <div class="related-widget-wrapper">
+                        <select name="blood_group" required id="id_blood_group" >
+                                    <option value="a+">a+</option>
+                                     <option value="a+">a+</option>
+                              <option value="b+">b+</option>
+                              <option value="ab+">ab+</option>
+                              <option value="a-">a-</option>
+                              <option value="b-">b-</option>
+                              <option value="ab-">ab-</option>
+                              <option value="o+">o+</option>
+                                <option value="o-">o-</option>
+                                </select>
+                        </div>
+
+                    </div>
+
+            </div>
+
+
+
+            <h1>Add Guardian Info</h1>
+
+
+
+
+
+        <!--Gardiun info-->
+
+
+
+
+
+            <div class="form-row field-relation_type">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_relation_type">Relation type:</label>
+
+                        <div class="related-widget-wrapper">
+                                <select name="relation_type" required id="id_relation_type">
+                                    <option value="Father">Father
+                                    </option>
+                                    <option value="Mother.">
+                                        mother
+                                    </option>
+
+                                </select>
+
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class="form-row field-f_name">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_f_name">F name:</label>
+
+                                <input type="text"  value="{{stu.gardian.f_name}}" name="g_f_name" class="vTextField" maxlength="15" required >
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-m_name">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_m_name">M name:</label>
+
+                                <input type="text" name="g_m_name" value="{{stu.gardian.m_name}}" class="vTextField" maxlength="15" required >
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-l_name">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_l_name">L name:</label>
+
+                                <input type="text" name="g_l_name" value="{{stu.gardian.l_name}}" class="vTextField" maxlength="15" required id="id_l_name">
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-occupation">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_occupation">Occupation:</label>
+
+                        <div class="related-widget-wrapper">
+                                <select name="occupation" required id="id_occupation">
+                                    <option value="business">Businessman
+                                    </option>
+                                    <option value="Engg.">
+                                        Enginnear
+                                    </option>
+                                    <option value="Docter">
+                                        Docter
+                                    </option>
+                                </select>
+                        </div>
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-annual_income">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_annual_income">Annual income:</label>
+
+                                <input type="text" name="annual_income" pattern="[0-9]{6}" value="{{stu.gardian.annual_income}}"  class="vIntegerField" required id="id_annual_income"/>
+                        <font color="red"> *annual income shoud be in range of 1-10 lakhs</font>
+
+
+                    </div>
+
+            </div>
+
+
+
+
+
+            <!--Contact Info-->
+        <h1>Add Contact Info</h1>
+
+
+
+
+
+            <div class="form-row field-addrese">
+
+
+                    <div>
+
+
+                            <label class="required" >Addrese:</label>
+
+                                <textarea class="vLargeTextField" cols="40" id="id_add" name="addrese"
+                                          required rows="10">
+                                    {{stu.contact.addrese}}qq
+                                </textarea>
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-city">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_city">City:</label>
+
+                                <input type="text" name="city" value="{{stu.contact.city}}" class="vTextField" maxlength="10" required id="id_city">
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-pincode">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_pincode">Pincode:</label>
+
+                                <input type="text" name="pincode"  pattern="[0-9]{6}"value="{{stu.contact.pincode}}" class="vIntegerField" maxlength="6" required id="id_pincode">
+
+ <font color="red" face="agencyfb"> *pincode  should be of correct (i.e. for Nadiad 387001)</font>
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-ph_no">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_ph_no">Ph no:</label>
++91
+                                <input type="text" name="ph_no" width="15" pattern="[0-9]{10}" value="{{stu.contact.ph_no}}" maxlength="10" required id="id_ph_no">
+
+ <font color="red" face="agencyfb"> *mobile number without country code(i.e. 9727386952)</font>
+
+
+                    </div>
+
+            </div>
+
+            <div class="form-row field-email">
+
+
+                    <div>
+
+
+                            <label class="required" for="id_email">Email:</label>
+
+                                <input type="email" name="email" value="{{stu.contact.email}}" class="vTextField" maxlength="254" required id="id_email">
+ <font color="red" face="agencyfb"> *email should be correct only</font>
+
+
+
+                    </div>
+
+            </div>
+            <div class="form-row field-img">
+
+
+                <div>
+
+
+                        <label for="id_img">Img:</label>
+
+
+                        <input type="file" name="image"  id="id_img">
+ curruntly at: {{stu.img.url}}
+</p>
+
+                </div>
+
+        </div>
+
+    </fieldset>
+<div class="submit-row"  >
+        <input type="submit" value="submit">
+</div>
+    </form>
+    </div>
+
+{% endblock %}
+
+</body>
+</html>
